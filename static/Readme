@@ -1,0 +1,5 @@
+该目录存放django的静态文件，文件夹目录可随意定了再配置
+css图片文件
+js文件
+
+html文件放在templates里
