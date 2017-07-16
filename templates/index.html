@@ -19,8 +19,6 @@
             <div class="nav ue-clear">
             	<ul class="searchList">
                     <li class="searchItem current" data-type="article">Article</li>
-                    <li class="searchItem" data-type="question">Company</li>
-                    <li class="searchItem" data-type="job">Position</li>
                 </ul>
             </div>
             <div class="inputArea">
@@ -35,20 +33,25 @@
             	<p class="history">
                 	<label>History:</label>
                     {% for search_words in topn_search %}
-                        <a href="/search?q={{ search_words }}">{{ search_words }}</a>
+                        <a href="/search?q={{ search_words }}"><br>{{ search_words }}</a>
                     {% endfor %}
                 </p>
             </div>
         </div><!-- End of main -->
     </div><!--End of bd-->
 
-    <div class="foot">
-    	<div class="wrap">
-            <div class="copyright">Copyright &copy;emma.com   E-mail:admin@emma.com</div>
-        </div>
-    </div>
 </div>
 </body>
+<script type="text/javascript">
+    $(".inputArea .searchInput").keyup(function(event){
+    if(event.keyCode == 13){
+        $(".inputArea .searchButton").click();
+    }
+});
+
+</script>
+
+
 <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/global.js' %}"></script>
 <script type="text/javascript">

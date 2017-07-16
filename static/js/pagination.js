@@ -5,8 +5,8 @@ jQuery.fn.pagination = function(maxentries, opts) {
 				num_display_entries : 4, // 中间显示页码的个数
 				num_edge_entries : 2, // 末尾显示页码的个数
 				link_to : "javascript:;",         //页码点击后的链接
-				prev_text : "Pre",   //上一页的文字
-				next_text : "Next",	   //下一页的文字
+				prev_text : "上一页",   //上一页的文字
+				next_text : "下一页",	   //下一页的文字
 				ellipse_text : "...",  //页码之间的省略号
 				display_msg : true, // 是否显示记录信息
 				prev_show_always : true, //是否总是显示最前页
@@ -133,21 +133,21 @@ jQuery.fn.pagination = function(maxentries, opts) {
 			if (opts.display_msg) {
 				if(!maxentries){
 					panel
-						.append('<div class="pxofy">currently no results</div>');
+						.append('<div class="pxofy">暂时无数据可以显示</div>');
 				}else{
 				panel
-						.append('<div class="pxofy">records&nbsp;'
+						.append('<div class="pxofy">显示第&nbsp;'
 								+ ((current_page * opts.items_per_page) + 1)
-								+ '&nbsp;to&nbsp;'
+								+ '&nbsp;条到&nbsp;'
 								+ (((current_page + 1) * opts.items_per_page) > maxentries
 										? maxentries
 										: ((current_page + 1) * opts.items_per_page))
-								+ '&nbsp;，total&nbsp;' + maxentries + '&nbsp;results</div>');
+								+ '&nbsp;条记录，总共&nbsp;' + maxentries + '&nbsp;条</div>');
 				}
 			}
 			//设置跳到第几页
 			if(opts.setPageNo){
-				  panel.append("<div class='goto'><span class='text'>jump to</span><input type='text'/><span class='page'>page</span><button type='button' class='ue-button long2'>sure</button></div>");
+				  panel.append("<div class='goto'><span class='text'>跳转到</span><input type='text'/><span class='page'>页</span><button type='button' class='ue-button long2'>确定</button></div>");
 			}
 		}
 

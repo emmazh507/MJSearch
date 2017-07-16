@@ -22,8 +22,6 @@
     <div class="nav">
     	<ul class="searchList">
             <li class="searchItem current" data-type="article">Article</li>
-            <li class="searchItem" data-type="question">Q&A</li>
-            <li class="searchItem" data-type="job">Position</li>
         </ul>
     </div>
 	<div id="bd" class="ue-clear">
@@ -55,7 +53,7 @@
             </div>
             <div class="resultArea">
             	<p class="resultTotal">
-                	<span class="info">Find about&nbsp;<span class="totalResult">{{ total_nums }}</span>&nbsp;Results (took <span class="time">{{ last_seconds }}</span>seconds)，total <span class="totalPage">{{ page_nums }}</span> pages</span>
+                	<span class="info">Find about&nbsp;<span class="totalResult">{{ total_nums }}</span>&nbsp;Results (took <span class="time">{{ last_seconds }}</span> seconds)，total <span class="totalPage">{{ page_nums }}</span> pages</span>
                 </p>
                 <div class="resultList">
                     {% for hit in all_hits %}
@@ -64,13 +62,13 @@
                                 <a href="{{ hit.url }}"  target="_blank" class="title">{% autoescape off %}{{ hit.title }}{% endautoescape %}
                                 <span class="divsion">-</span>
                                 <span class="fileType">
-                                    <span class="label">Source：</span>
+                                    <span class="label">Source: </span>
                                     <span class="value">{{ hit.index }}</span>
                                 </span>
-                                <span class="dependValue">
-                                    <span class="label">Score：</span>
+                           <!--     <span class="dependValue">
+                                    <span class="label">Score: </span>
                                     <span class="value">{{ hit.score }}</span>
-                                </span>
+                                </span>  -->
                             </div>
                             <div class="itemBody">
                                 {% autoescape off %}{{ hit.content }}{% endautoescape %}
@@ -167,8 +165,10 @@
 		callback :pageselectCallback
 	});
 	//点击某一页面，自己的逻辑，q, p都是可获取的值，见views.py
-	function pageselectCallback(page_id, jq) {
-		window.location.href=search_url+'?q='+ {{ key_words }} +'&p='+page_id
+	function pageselectCallback(page_id) {
+	    var key_words = $(".searchInput").val();
+	    window.location.href=search_url+'?q='+ key_words +'&p='+(page_id);
+        return false;
 	}
 	
 	setHeight();

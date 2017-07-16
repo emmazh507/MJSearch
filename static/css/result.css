@@ -82,7 +82,7 @@ html{*overflow:auto;}
 .resultArea .searchInResult .searchButton{left:417px;}
 /*历史搜索区域*/
 .historyArea{float:right;margin-right:-212px;width:212px;}
-.historyArea h6{margin-bottom:10px;font-weight:bold;}
+.historyArea h6{margin-bottom:100px;font-weight:bold;}
 .historyArea .historyList{margin-bottom:20px;}
 .historyArea .historyList li{margin-bottom:5px;}
 

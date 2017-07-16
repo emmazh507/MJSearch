@@ -25,7 +25,7 @@ SECRET_KEY = 'plbmiv6$&fq-2$)*)2ig9mf0*)&s-lr(l3r99p%p1)&qb2ot6h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["0.0.0.0", "192.168.31.130", "73.170.153.62"]
 
 
 # Application definition

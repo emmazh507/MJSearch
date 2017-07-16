@@ -41,7 +41,7 @@ class SearchSuggest(View):
             for match in suggestions.my_suggest[0].options:
                 #pass
                 source = match._source
-                re_datas.append(str(source["title"]))
+                re_datas.append("".join(source["title"]))
         return HttpResponse(json.dumps(re_datas), content_type="application/json")
 
 class SearchView(View):
@@ -105,7 +105,7 @@ class SearchView(View):
         for hit in response["hits"]["hits"]:
             hit_dict = {}
             hit_dict["index"] = hit["_index"]
-            hit_dict["post_date"] = hit["_source"]["post_date"]
+            hit_dict["post_date"] = "".join(hit["_source"]["post_date"])
             if "onem3point" in hit["_index"]:
                 if "title" in hit["highlight"]:
                     hit_dict["title"] = "".join(hit["highlight"]["title"])
