@@ -3,7 +3,7 @@ html{*overflow:auto;}
 #main{width:730px;margin:75px auto 0;}
 #main h1.title{width:600px;}
 #bd{margin-bottom:20px;}
-.logo.large{margin:0px auto 10px auto;width:342px;height:144px;background: url(../img/logo.png) no-repeat center center;}
+.logo.large{margin:0px auto 10px auto;width:134px;height:33px;background: url(../img/logo_bkup.png) no-repeat center center;}
 
 /*nav样式*/
 .nav{margin-bottom:10px;}
@@ -31,4 +31,4 @@ html{*overflow:auto;}
 /*版权信息*/
 .foot{position:absolute;bottom:0px;width:100%;}
 .foot .wrap{margin:0 auto;}
-.foot .copyright{position:relative;top:-35px;color:#ababab;text-align:center;}
+.foot .copyright{position:absolute;bottom:0px;color:#ababab;text-align:left;}
